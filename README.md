@@ -81,23 +81,23 @@ It allows users to select data columns, handle JWT authentication for ClickHouse
 
 🛠️ Setup, Configuration & Run Instructions
 📁 Clone the Repository
-git clone https://github.com/sourav8927/BiFlux-Zeotap-assignment2.git
-cd BiFlux-Zeotap-assignment2
+- git clone https://github.com/sourav8927/BiFlux-Zeotap-assignment2.git
+- cd BiFlux-Zeotap-assignment2
 
 🔙 Backend Setup
-cd .\BIFLUX-server\
-npm install
+- cd .\BIFLUX-server\
+- npm install
 
 📄 Create a .env file in the backend directory:
-PORT=5000
+- PORT=5000
 
 ▶️ Start the Backend Server:
-nodemon server.js
-The backend server will run on: http://localhost:5000
+- nodemon server.js
+- The backend server will run on: http://localhost:5000
 
 🌐 Frontend Setup
-cd .\BIFLUX-client\
-npm install
+- cd .\BIFLUX-client\
+- npm install
 ▶️ Start the Frontend App:
-npm run dev
-The frontend will be accessible at: http://localhost:port
+- npm run dev
+- The frontend will be accessible at: http://localhost:port
