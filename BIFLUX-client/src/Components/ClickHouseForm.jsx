@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 const ClickHouseForm = () => {
   const [formData, setFormData] = useState({
-    host: "",
+    hostUrl: "",
     port: "",
     database: "",
     username: "",
@@ -44,8 +44,8 @@ const ClickHouseForm = () => {
       <div className="grid grid-cols-1 gap-4">
         <input
           type="text"
-          name="host"
-          value={formData.host}
+          name="hostUrl"
+          value={formData.hostUrl}
           onChange={handleChange}
           placeholder="Host (e.g., http://localhost)"
           className="input"
