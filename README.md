@@ -176,11 +176,34 @@ $response.access_token
 
 ### 🔙 Backend Setup
 - cd .\BIFLUX-server\
-- npm install
+- cp .env.example .env
+- paste
+###
+- ### Setup the 📁 clickhouse_config/ folder
+- put your own credentials of AUTHO in users.xml
+- # Run in powershell
+- docker run -d --name biflux-clickhouse '
+  -p 8123:8123 
+  -v ./clickhouse_config/users.xml:/etc/clickhouse-server/users.xml '
+  -v ./clickhouse_config/config.xml:/etc/clickhouse-server/config.xml '
+  clickhouse/clickhouse-server
+  
+-open docker and check its running or not with Bind mount inside container Dashboard
+### Docker looks like
+![image](https://github.com/user-attachments/assets/28c6bb65-2fe5-4f69-92fb-d60f25fc423d)
 
-### 📄 Create a .env file in the backend directory:
+
+# Auth0 Credentials (replace with your own or use provided test keys)
+AUTH0_DOMAIN=https://your-auth0-domain/
+AUTH0_CLIENT_ID=your-client-id
+AUTH0_CLIENT_SECRET=your-client-secret
+AUTH0_AUDIENCE=https://clickhouse-api
+
+# ClickHouse Config
+CLICKHOUSE_URL=http://localhost:8123
+CLICKHOUSE_USER=auth0_user
 - PORT=5000
-
+- npm i
 ### ▶️ Start the Backend Server:
 - nodemon server.js
 - The backend server will run on: http://localhost:5000
