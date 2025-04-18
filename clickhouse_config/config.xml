@@ -1,0 +1,24 @@
+<clickhouse>
+  <!-- Enables HTTP server on 8123 (default) -->
+  <http_port>8123</http_port>
+
+  <!-- User config file -->
+  <users_config>users.xml</users_config>
+
+  <!-- JWT HTTP authentication support -->
+  <jwt>
+    <verify>true</verify>
+  </jwt>
+
+  <!-- Optional: Security settings -->
+  <listen_host>::</listen_host>
+
+  <!-- Logging (optional but helpful for debugging) -->
+  <logger>
+    <level>trace</level>
+    <log>/var/log/clickhouse-server/clickhouse-server.log</log>
+    <errorlog>/var/log/clickhouse-server/clickhouse-server.err.log</errorlog>
+    <size>100M</size>
+    <count>10</count>
+  </logger>
+</clickhouse>

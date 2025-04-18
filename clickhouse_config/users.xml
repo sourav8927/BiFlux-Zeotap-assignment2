@@ -1,0 +1,43 @@
+<clickhouse>
+  <profiles>
+    <default>
+      <max_memory_usage>10000000000</max_memory_usage>
+      <use_uncompressed_cache>1</use_uncompressed_cache>
+      <load_balancing>random</load_balancing>
+    </default>
+  </profiles>
+
+  <users>
+    <default>
+      <password>admin</password>
+      <networks>
+        <ip>::/0</ip>
+      </networks>
+      <profile>default</profile>
+      <quota>default</quota>
+    </default>
+
+    <auth0_user>
+      <no_password/>
+      <networks>
+        <ip>::/0</ip>
+      </networks>
+      <profile>default</profile>
+      <quota>default</quota>
+      <allow_databases>
+        <database>default</database>
+      </allow_databases>
+      <jwt>
+        <enabled>1</enabled>
+        <verification>
+          <type>RS256</type>
+          <jwks_url>https://your_Domain/.well-known/jwks.json</jwks_url>
+        </verification>
+        <claims>
+          <iss>https://your_domain/</iss>
+          <aud>https://clickhouse-api</aud>
+        </claims>
+      </jwt>
+    </auth0_user>
+  </users>
+</clickhouse>
