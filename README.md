@@ -214,15 +214,15 @@ Invoke-RestMethod -Uri "http://localhost:8123/?query=SELECT+1" `
   -Headers @{ "Authorization" = "Bearer $token" }
 
 
-# Auth0 Credentials (replace with your own or use provided test keys)
-AUTH0_DOMAIN=https://your-auth0-domain/
-AUTH0_CLIENT_ID=your-client-id
-AUTH0_CLIENT_SECRET=your-client-secret
-AUTH0_AUDIENCE=https://clickhouse-api
+### Auth0 Credentials (replace with your own or use provided test keys)
+ - AUTH0_DOMAIN=https://your-auth0-domain/
+-AUTH0_CLIENT_ID=your-client-id
+-AUTH0_CLIENT_SECRET=your-client-secret
+-AUTH0_AUDIENCE=https://clickhouse-api
 
-# ClickHouse Config
-CLICKHOUSE_URL=http://localhost:8123
-CLICKHOUSE_USER=auth0_user
+### ClickHouse Config
+-CLICKHOUSE_URL=http://localhost:8123
+-CLICKHOUSE_USER=auth0_user
 - PORT=5000
 - 
 - npm i
