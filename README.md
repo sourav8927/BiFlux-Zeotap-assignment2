@@ -285,6 +285,11 @@ CLICKHOUSE_USER=auth0_user
 - Check for missing `<enabled>1</enabled>` in `users.xml`
 - Verify well-formed XML syntax
 - Ensure correct path for volume mounts (especially `${PWD}` usage)
+- ![image](https://github.com/user-attachments/assets/2fcf413e-6849-4103-8bb2-a15ca9daf18e)
+
+#And
+![image](https://github.com/user-attachments/assets/3ce03bd0-ff85-4c16-a800-bab48cf5cf16)
+
 
 Fix these and you’re golden! 💡
 
