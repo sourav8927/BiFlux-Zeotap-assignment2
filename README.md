@@ -259,11 +259,13 @@ $response.access_token
 
 ## 📸 Docker Screenshot Example
 
-```md
-![Docker Running Screenshot](./assets/docker-running.png)
-```
+![Screenshot (629)](https://github.com/user-attachments/assets/aaaa530c-9456-4c46-8c0a-24dc529fdc1a)
 
----
+![Screenshot (630)](https://github.com/user-attachments/assets/30d1ba15-8754-43cf-86cc-506649a4fc06)
+
+![Screenshot (631)](https://github.com/user-attachments/assets/59d2766e-bafe-48c2-889b-d6a0c3660875)
+
+
 
 ## 💌 Sample Auth0 .env Template
 
