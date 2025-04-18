@@ -178,19 +178,40 @@ $response.access_token
 - cd .\BIFLUX-server\
 - cp .env.example .env
 - paste
-###
-- ### Setup the 📁 clickhouse_config/ folder
+- 
+### Setup the 📁 clickhouse_config/ folder
 - put your own credentials of AUTHO in users.xml
 - # Run in powershell
 - docker run -d --name biflux-clickhouse '
   -p 8123:8123 
   -v ./clickhouse_config/users.xml:/etc/clickhouse-server/users.xml '
   -v ./clickhouse_config/config.xml:/etc/clickhouse-server/config.xml '
-  clickhouse/clickhouse-server
+  clickhouse/clickhouse-server:23.8.3
   
 -open docker and check its running or not with Bind mount inside container Dashboard
 ### Docker looks like
 ![image](https://github.com/user-attachments/assets/28c6bb65-2fe5-4f69-92fb-d60f25fc423d)
+
+![image](https://github.com/user-attachments/assets/de01fb8c-8531-4205-ab06-3b32ce4ce54a)
+
+![image](https://github.com/user-attachments/assets/bff5643e-34cc-43b0-b0b6-b4b70a290dca)
+
+### Testing purpose : Generate token using powershell->
+$response = Invoke-RestMethod -Uri "Isser which you put in users.xml /oauth/token"
+-Method POST -ContentType "application/json" -Body (@{
+  client_id = "own client id from auth0"
+  client_secret = "auth0 client secret"
+  audience = "https://clickhouse-api"
+  grant_type = "client_credentials"
+} | ConvertTo-Json -Depth 3); $response.access_token
+
+then
+
+$token = "your own generated token from previous command"
+
+Invoke-RestMethod -Uri "http://localhost:8123/?query=SELECT+1" `
+  -Method GET `
+  -Headers @{ "Authorization" = "Bearer $token" }
 
 
 # Auth0 Credentials (replace with your own or use provided test keys)
@@ -203,6 +224,7 @@ AUTH0_AUDIENCE=https://clickhouse-api
 CLICKHOUSE_URL=http://localhost:8123
 CLICKHOUSE_USER=auth0_user
 - PORT=5000
+- 
 - npm i
 ### ▶️ Start the Backend Server:
 - nodemon server.js
